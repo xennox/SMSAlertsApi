@@ -78,7 +78,7 @@ def update(id, request: schemas.Malling, db: Session = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'Рассылка с ID {id} не найдена')
     malling.update(request.dict())
     db.commit()
-    return f'Клиент с ID {id} Обновлен'
+    return f'Рассылка с ID {id} Обновлена'
 
 
 if __name__ == '__main__':
